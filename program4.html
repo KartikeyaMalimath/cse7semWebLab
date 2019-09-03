@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ovals and number reversal</title>
+	<script>
+	function check() {
+		var inp = document.getElementById("inp").value;
+		//document.getElementById("output").innerHTML = typeof inp;
+		if(!isNaN(inp)){
+			inp = inp + "";
+			inp =  inp.split("").reverse().join("");
+			document.getElementById("output").innerHTML = inp;
+		}
+		else {
+		inp = inp.toLowerCase();
+			for(var i=0; i < inp.length; i++) {
+				if(inp.charAt(i) == 'a' || inp.charAt(i) == 'e' || inp.charAt(i) == 'i' || inp.charAt(i) == 'o' || inp.charAt(i) == 'u') {
+					document.getElementById("output").innerHTML = "Oval found is : "+inp.charAt(i)+" Position : "+ (i+1) ;
+					break;
+				}
+			}
+		}
+	}
+	</script>
+</head>
+<body>
+	<form>
+		<label for="inp">Enter String or Number</label>
+		<br>
+		<input type="text" name="inp" id="inp"></input>
+		<br>
+		<p id="output"></p>
+		<input type="button" onClick="check()" value ="submit"></input>
+	</form>
+</body>
+</html>
