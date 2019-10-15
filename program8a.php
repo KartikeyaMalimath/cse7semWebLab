@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Simple Calculator</title>
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<?php 
+		if(isset($_POST['display'])){
+			$result = $_POST['display'];
+			$result = eval('return '.$result.';');
+		}
+	?>
+	
+</head>
+<style>
+		body{
+			width:100%;
+			height:100%;
+			background-color: #A7A7A8;
+			padding: 20px;
+		}
+		.main {
+			position:relativel;
+			align:center;
+			padding:50px;
+			width:100%;
+			height:100%;
+		}
+		.card{
+			position:absolute;
+			width: 300px;
+			padding:50px;
+			background-color: #616279;
+			display:block;
+			margin-left: 50px;
+			margin-right: 50px
+			box-shadow: 0 4px 8px 0 rgba(0,0,0,1);
+			transition: 0.3s;
+			width: 40
+		}
+		.card:hover {
+			box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+		}
+		
+		.display{
+			width:200px;
+		}
+		
+	</style>
+<body>
+	<div class="main">
+	<center>
+	<div class="card">
+		<center>
+		<form name="calculator" method="POST">
+		<center>Calculator</center>
+			<table>
+				<tr><input class="w3-input w3-border display"  type="text" name="display" id="display" <?php if(isset($_POST['display'])) { echo "value='".$result."'";} ?>></tr>
+				<br>
+				<tr>
+					<td><input class="w3-btn w3-brown" type="button" value='7' onClick="calculator.display.value+='7'"></td>
+					<td><input class="w3-btn w3-brown" type="button" value='8' onClick="calculator.display.value+='8'"></td>
+					<td><input class="w3-btn w3-brown"  type="button" value='9' onClick="calculator.display.value+='9'"></td>
+					<td><input class="w3-btn w3-brown" type="button" value='+' onClick="calculator.display.value+='+'"></td>
+				</tr>
+				<tr>
+					<td><input class="w3-btn w3-brown"  type="button" value='4' onClick="calculator.display.value+='4'"></td>
+					<td><input class="w3-btn w3-brown" type="button" value='5' onClick="calculator.display.value+='5'"></td>
+					<td><input class="w3-btn w3-brown" type="button" value='6' onClick="calculator.display.value+='6'"></td>
+					<td><input class="w3-btn w3-brown" type="button" value='-' onClick="calculator.display.value+='-'"></td>
+				</tr>
+				<tr>
+					<td><input class="w3-btn w3-brown" type="button" value='1' onClick="calculator.display.value+='1'"></td>
+					<td><input class="w3-btn w3-brown" type="button" value='2' onClick="calculator.display.value+='2'"></td>
+					<td><input class="w3-btn w3-brown" type="button" value='3' onClick="calculator.display.value+='3'"></td>
+					<td><input class="w3-btn w3-brown" type="button" value='*' onClick="calculator.display.value+='*'"></td>
+				</tr>
+				<tr>
+					<td><input class="w3-btn w3-brown" type="button" value='c' onClick="calculator.display.value=''"></td>
+					<td><input class="w3-btn w3-brown" type="button" value='0' onClick="calculator.display.value+=0"></td>
+					<td><input class="w3-btn w3-brown" type="submit" value='='></td>
+					<td><input class="w3-btn w3-brown" type="button" value='/' onClick="calculator.display.value+='/'"></td>
+				</tr>
+			</table>
+		</form>
+		</center>
+	</div>
+	</center>
+	</div>
+</body>
+</html>
