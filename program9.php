@@ -3,7 +3,7 @@
 	$statesArr = [];
 	$states = explode(' ', $allstates);
 	$i = 0;
-	//a
+	//xas
 	foreach($states as $state) {
 		if(preg_match('/xas$/',($state))) {
 			$statesArr[$i] = ($state);
